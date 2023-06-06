@@ -1,5 +1,4 @@
-
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,6 +10,18 @@ import './App.css'
 function App() {
 
   const puntuacion = [1, 2, 3, 4, 5]
+
+  const [number, setNumber] = useState([])
+  
+  useEffect(() => {
+    handleNumber()
+  }, [])
+
+  const handleNumber = (p) => {
+    setNumber(p);
+  };
+  
+
 
   return (
     <>
@@ -60,6 +71,11 @@ function App() {
               return (
                 <Typography
                   className="button"
+                  sx={{
+                    ":hover": {
+                      bgcolor:"#ca6212",
+                      color:"white"
+                    }}}
                   color="white"
                   border={"1px solid"}
                   borderColor={"#353839"}
@@ -71,6 +87,7 @@ function App() {
                   justifyContent={"center"}
                   marginLeft={"7px"}
                   alignItems={"center"}
+                  onClick={() => handleNumber(p)}
                 >
                   {p}
                 </Typography>
@@ -80,6 +97,10 @@ function App() {
         </CardActions>
         <Button className="submit"
           sx={{
+            ":hover": {
+              bgcolor:"white",
+              color:"#ca6212"
+            },
             backgroundColor: "#ca6212",
             color: "white",
             display: "flex",
@@ -89,11 +110,11 @@ function App() {
             width: "280px",
             marginLeft: "30px",
             borderRadius: "20px",
+            
           }}
         >
           Error
         </Button>
-        {/* hover y onclick blanco*/}
       </Card>
     </>
   );

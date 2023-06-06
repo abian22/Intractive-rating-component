@@ -40,3 +40,8 @@
   height: 13px;
   margin-bottom: 1px;
 }
+
+.submit:active{
+  background-color: "white";
+  color:"white"
+}
