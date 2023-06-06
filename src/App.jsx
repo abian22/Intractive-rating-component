@@ -19,6 +19,7 @@ function App() {
 
   const handleNumber = (p) => {
     setNumber(p);
+    
   };
   
 
@@ -75,7 +76,9 @@ function App() {
                     ":hover": {
                       bgcolor:"#ca6212",
                       color:"white"
-                    }}}
+                    },
+                    backgroundColor: p === number ? "grey" : "#353839",
+                  }}
                   color="white"
                   border={"1px solid"}
                   borderColor={"#353839"}
